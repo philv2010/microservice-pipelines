@@ -25,6 +25,7 @@ def createTestJob(jobName, repoUrl) {
             git {
                 remote(repoUrl)
                 includes('*')
+		credentials('PhilGit')
             }
         }
         triggers {
@@ -34,7 +35,7 @@ def createTestJob(jobName, repoUrl) {
 }
 
 def buildPipelineJobs() {
-    def repo = "https://github.com/philv2010/"
+    def repo = "git@github.com:philv2010/"
     def repoUrl = repo + jobName + ".git"
     def deployName = jobName + "_deploy"
     def testName = jobName + "_test"
