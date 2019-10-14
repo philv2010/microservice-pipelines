@@ -25,7 +25,6 @@ def createTestJob(jobName, repoUrl) {
             git {
                 remote(repoUrl)
                 includes('*')
-		credentials('PhilGithubHTTPS')
             }
         }
         triggers {
